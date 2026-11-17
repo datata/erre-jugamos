@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#fff8ec" />
+    <meta name="description" content="Un juego tranquilo para escuchar y practicar la erre." />
+    <title>Rori y la erre</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Rori y la erre, inicio"><span class="brand-mark">R</span> RORI Y LA ERRE</a>
+        <span class="grownup">PARA JUGAR JUNTOS</span>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">¡HOLA, PEQUE!</span>
+          <h1>Vamos a jugar<br />con la <span>erre</span></h1>
+          <p>Escucha, prueba y diviértete.</p>
+        </div>
+        <svg class="frog" viewBox="0 0 160 140" role="img" aria-label="Rori, una ranita verde">
+          <ellipse cx="80" cy="88" rx="62" ry="45" fill="#8ebf68" />
+          <ellipse cx="55" cy="39" rx="22" ry="27" fill="#8ebf68" />
+          <ellipse cx="105" cy="39" rx="22" ry="27" fill="#8ebf68" />
+          <ellipse cx="55" cy="39" rx="12" ry="15" fill="#fffdf5" />
+          <ellipse cx="105" cy="39" rx="12" ry="15" fill="#fffdf5" />
+          <circle cx="58" cy="41" r="5" fill="#27372b" />
+          <circle cx="102" cy="41" r="5" fill="#27372b" />
+          <ellipse cx="80" cy="93" rx="37" ry="24" fill="#c8df8b" />
+          <path d="M61 88q19 20 38 0" fill="none" stroke="#40543a" stroke-width="4" stroke-linecap="round" />
+          <circle cx="42" cy="78" r="6" fill="#ec9c83" opacity=".8" />
+          <circle cx="118" cy="78" r="6" fill="#ec9c83" opacity=".8" />
+          <path d="M30 123q-9 9-19 3m119-3q9 9 19 3" fill="none" stroke="#638b50" stroke-width="7" stroke-linecap="round" />
+        </svg>
+      </section>
+
+      <section class="syllables" aria-labelledby="syllableHeading">
+        <div class="section-title"><span class="step">1</span><h2 id="syllableHeading">Escucha las sílabas</h2></div>
+        <p class="section-hint">Toca una para oírla</p>
+        <div class="syllable-row" id="syllableRow"></div>
+      </section>
+
+      <nav class="mode-tabs" aria-label="Elige un juego">
+        <button class="mode-tab active" id="practiceTab" type="button">Mi turno</button>
+        <button class="mode-tab" id="gameTab" type="button">Adivina</button>
+      </nav>
+
+      <section class="practice panel" id="practicePanel">
+        <div class="panel-heading"><span class="step">2</span><div><h2>Ahora tú</h2><p>Escucha y prueba a decirlo</p></div></div>
+        <div class="prompt-box">
+          <span class="prompt-label" id="promptLabel">DI CON RORI</span>
+          <strong class="prompt" id="prompt">RA</strong>
+          <button class="listen-button" id="listenPrompt" type="button"><span aria-hidden="true">🔊</span> Escuchar</button>
+        </div>
+        <div class="record-controls">
+          <button class="record-button" id="recordButton" type="button"><span class="mic" aria-hidden="true">●</span> Grabarme</button>
+          <button class="playback-button" id="playbackButton" type="button" disabled><span aria-hidden="true">▶</span> Oír mi voz</button>
+        </div>
+        <p class="record-status" id="recordStatus" aria-live="polite">Pulsa grabar y di la sílaba. ¡No pasa nada si no sale!</p>
+        <audio id="myRecording" hidden></audio>
+        <button class="next-button" id="nextPrompt" type="button">Otra palabra <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="game panel" id="gamePanel" hidden>
+        <div class="panel-heading"><span class="step">2</span><div><h2>¿Qué has oído?</h2><p>Escucha y toca la sílaba</p></div></div>
+        <button class="sound-card" id="playQuestion" type="button"><span aria-hidden="true">🔊</span><b>Escuchar</b></button>
+        <div class="game-choices" id="gameChoices"></div>
+        <p class="game-feedback" id="gameFeedback" aria-live="polite">¡A ver cuál es!</p>
+        <div class="stars" id="stars" aria-label="Estrellas ganadas">☆ ☆ ☆</div>
+      </section>
+
+      <p class="kind-note">Cada intento cuenta. Juega a tu ritmo, sin prisa. <span aria-hidden="true">💚</span></p>
+      <footer>RORI TE ACOMPAÑA <span>🐸</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
